@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s.tardu.st</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Determination+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="rain-canvas"></canvas>
+    <div class="white-fade" id="whiteFade"></div>
+
+    <div class="click-prompt" id="clickPrompt">
+        <img src="assets/images/heart.png" alt="heart" class="heart-icon" id="heartIcon">
+        <span>Click anywhere to begin...</span>
+    </div>
+
+    <img src="assets/images/title.png" alt="S.TARDU.ST" class="title-image" id="titleImage" style="display: none;">
+
+    <div class="container">
+        <div class="chatBox" id="chatBox">
+            <div class="textBox">
+                <p class="determination" id="typewriter" style="margin: 0;">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="skip-button" id="skipButton"></div>
+
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-options">
+            <div class="menu-option" id="startOption" data-option="start">START</div>
+            <div class="menu-option" id="creditsOption" data-option="credits">CREDITS</div>
+        </div>
+    </div>
+
+    <div class="profiles-page" id="profilesPage">
+        <div class="profile-card">
+            <img src="https://files.catbox.moe/5he4d1.jpg" alt="otis" class="profile-image">
+            <div class="profile-name">otis</div>
+            <div class="profile-bio">where irrealities of the myriad converge</div>
+        </div>
+        <div class="profile-card">
+            <img src="https://files.catbox.moe/2x3ck5.png" alt="sev" class="profile-image">
+            <div class="profile-name">sev</div>
+            <div class="profile-bio">id like to thank the sidewalk from keeping me off the street</div>
+        </div>
+    </div>
+
+    <div class="name-entry-page" id="nameEntryPage">
+        <div class="name-prompt">Enter your name:</div>
+        <div class="name-display" id="nameDisplay"></div>
+        <div class="alphabet-grid" id="alphabetGrid"></div>
+        <div class="name-controls">
+            <button class="control-button" id="backspaceBtn">BACKSPACE</button>
+            <button class="control-button" id="doneBtn">DONE</button>
+        </div>
+    </div>
+
+    <div class="blog-page" id="blogPage">
+        <div class="blog-title">
+            <img src="assets/images/title.png" alt="S.TARDU.ST" class="blog-title-image">
+        </div>
+
+        <div class="blog-container">
+            <div class="blog-profile">
+                <div class="profile-content">
+                    <img src="https://files.catbox.moe/5he4d1.jpg" alt="otis" class="blog-avatar">
+                    <div class="blog-name">otis</div>
+                    <div class="blog-bio">where irrealities of the myriad converge</div>
+                    <div class="blog-location">Warsaw, Poland</div>
+                </div>
+            </div>
+
+            <div class="blog-profile">
+                <div class="profile-content">
+                    <img src="https://files.catbox.moe/2x3ck5.png" alt="sev" class="blog-avatar">
+                    <div class="blog-name">sev</div>
+                    <div class="blog-bio">id like to thank the sidewalk from keeping me off the street</div>
+                    <div class="blog-location">Agartha</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <div class="music-header">
+                <div class="music-info">
+                    <div class="music-title"></div>
+                    <div class="music-artist"></div>
+                </div>
+                <div class="album-cover">
+                    <div class="cover-placeholder"></div>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="time-info">
+                    <span class="current-time">1:23</span>
+                    <span class="total-time">3:45</span>
+                </div>
+            </div>
+            <div class="music-controls">
+                <button class="music-btn">PREV</button>
+                <button class="music-btn">PLAY</button>
+                <button class="music-btn">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="credits-page" id="creditsPage">
+        <div class="credits-scroll" id="creditsScroll">
+            <div class="credits-title">
+                <img src="assets/images/title.png" alt="Title">
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Directed by</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Produced by</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Executive Producer</div>
+                <div class="credits-name">adrian ortez</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Screenplay by</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Director of Photography</div>
+                <div class="credits-name">mirva pasanen</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Production Designer</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Editor</div>
+                <div class="credits-name">adrian ortez</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Music by</div>
+                <div class="credits-name">toby fox</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Casting Director</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Visual Effects Supervisor</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Sound Designer</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Art Director</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Set Decorator</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">CEO</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Key Grip</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Line Producer</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Post-Production Supervisor</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Craft Services</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Assistant Editor</div>
+                <div class="credits-name">sev yamnaya</div>
+            </div>
+
+            <div class="credits-section">
+                <div class="credits-role">Colorist</div>
+                <div class="credits-name">otis apples</div>
+            </div>
+
+            <div class="credits-special">Special Thanks</div>
+
+            <div class="credits-section">
+                <div class="credits-role">The Sidewalk</div>
+                <div class="credits-name">For keeping us off the street</div>
+            </div>
+            <div style="height: 200px;"></div>
+
+            <div class="credits-title">© 2024 S.TARDU.ST Productions</div>
+        </div>
+    </div>
+
+    <audio id="typingSound" preload="auto">
+        <source src="assets/audio/typing.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="clickSound" preload="auto">
+        <source src="assets/audio/ss.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="menuSelectSound" preload="auto">
+        <source src="assets/audio/save.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="menuHoverSound" preload="auto">
+        <source src="assets/audio/menu-hover.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="backgroundMusic" preload="auto" loop>
+        <source src="assets/audio/onceuponatime.flac" type="audio/mpeg">
+    </audio>
+
+    <audio id="creditsMusic" preload="auto" loop>
+        <source src="assets/audio/histheme.flac" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
